@@ -17,6 +17,7 @@ export const buildLoaders = (options: BuildOptions): webpack.RuleSetRule[] => {
                 loader: 'css-loader',
                 options: {
                     modules: {
+                        auto: (resPath: string): boolean => typeof resPath === 'string' && resPath.indexOf('.module.') !== -1,
                         localIdentName: options.isDev ? '[path][name]__[local]' : '[hash:base64:8]',
                     },
                 },

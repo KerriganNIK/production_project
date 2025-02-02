@@ -1,12 +1,12 @@
 import React, {Suspense, useState} from 'react';
-import classes from '../app.module.scss'
 import {Route, Routes} from "react-router-dom";
-import MainPage from "@/pages/MainPage";
-import AboutPage from "@/pages/AboutPage";
+import MainPage from "@/pages/MainPage/MainPage";
+import AboutPage from "@/pages/AboutPage/AboutPage";
+import '@/styles/index.scss'
 
 const App = () => {
     return (
-        <div>
+        <div className='app light'>
             <Suspense fallback={<div>Loading...</div>}>
                 <Routes>
                     <Route path="/" element={<MainPage/>} />
