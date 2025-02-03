@@ -1,0 +1,17 @@
+.Navbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  height: var(--navbar-height);
+  background-color: var(--primary);
+
+  a {
+    text-decoration: none;
+    color: var(--text-color);
+  }
+}
+
+.linkSpace {
+  margin-right: 15px;
+}
