@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import classes from "./Navbar.module.scss";
 import {Link} from "react-router-dom";
-import {AppLink, AppLinkTheme} from "@/shared/ui/AppLink";
+import {AppLink, AppLinkTheme} from "@/shared/ui/AppLink/AppLink";
 
 interface NavbarProps {
     className?: string;
