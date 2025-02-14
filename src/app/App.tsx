@@ -1,4 +1,4 @@
-import '@/app/styles/index.scss'
+import '@/app/styles/index.scss';
 import classNames from "classnames";
 import {useTheme} from "@/app/providers/ThemProvider";
 import {AppRouter} from "@/app/providers/Router";
@@ -7,7 +7,7 @@ import {Sidebar} from "@/widgets/Sidebar/ui/Sidebar";
 import {Suspense} from "react";
 
 const App = () => {
-    const {theme} = useTheme()
+    const {theme} = useTheme();
 
     return (
         <Suspense fallback='Loading...'>

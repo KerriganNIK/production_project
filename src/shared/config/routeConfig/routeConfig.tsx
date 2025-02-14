@@ -1,4 +1,4 @@
-import {RouteProps} from "react-router-dom";
+import type {RouteProps} from "react-router-dom";
 import {MainPage} from "@/pages/MainPage";
 import {AboutPage} from "@/pages/AboutPage";
 
@@ -9,8 +9,8 @@ export enum Routes {
 
 export const RouterPath: Record<Routes, string> = {
     [Routes.MAIN]: '/',
-    [Routes.ABOUT]: '/about',
-}
+    [Routes.ABOUT]: '/about'
+};
 
 export const routeConfig: Record<Routes, RouteProps> = {
     [Routes.MAIN]: {
@@ -21,4 +21,4 @@ export const routeConfig: Record<Routes, RouteProps> = {
         path: RouterPath.about,
         element: <AboutPage />
     }
-}
+};
