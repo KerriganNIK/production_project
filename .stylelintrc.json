@@ -1,0 +1,17 @@
+{
+  "extends": ["stylelint-config-standard"],
+  "rules": {
+    "block-no-empty": true,
+    "comment-no-empty": true,
+    "no-empty-source": true,
+    "custom-property-no-missing-var-function": true,
+    "selector-class-pattern": null,
+    "property-no-unknown": null,
+    "no-invalid-double-slash-comments": null,
+    "custom-property-pattern": null,
+    "import-notation": null
+  },
+  "ignoreFiles": [
+    "src/app/styles/variables/global.scss"
+  ]
+}

@@ -9,6 +9,8 @@
     "build:prod": "webpack --env mode=production",
     "lint:ts": "eslint \"./**/*.{ts,tsx}\"",
     "lint:ts:fix": "eslint \"./**/*.{ts,tsx}\" --fix",
+    "lint:scss": "npx stylelint \"**/*.scss\"",
+    "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
     "test:unit": "jest --config ./config/jest/jest.config.ts"
   },
   "private": true,
@@ -36,6 +38,8 @@
     "sass": "^1.49.9",
     "sass-loader": "^12.6.0",
     "style-loader": "^3.3.1",
+    "stylelint": "^16.14.1",
+    "stylelint-config-standard": "^37.0.0",
     "ts-loader": "^9.5.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.3",
