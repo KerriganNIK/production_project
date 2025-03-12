@@ -46,7 +46,7 @@ export const buildLoaders = (options: BuildOptions): webpack.RuleSetRule[] => {
     return [
         svgLoader,
         cssLoader,
-        tsLoader,
-        babelLoader
+        babelLoader,
+        tsLoader
     ];
 };
