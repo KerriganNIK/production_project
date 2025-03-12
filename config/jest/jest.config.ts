@@ -35,8 +35,9 @@ const config: Config = {
     rootDir: '../../',
     setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
     moduleNameMapper: {
-        "^@/(.*)$": "<rootDir>/src/$1",
-        '\\.(s?css|less)$': 'identity-obj-proxy'
+        '\\.(s?css|less)$': 'identity-obj-proxy',
+        "^.+\\.svg$": '<rootDir>/config/jest/jestEmptyComponent.tsx',
+        "^@/(.*)$": "<rootDir>/src/$1"
     }
 
     // Indicates whether the coverage information should be collected while executing the test
