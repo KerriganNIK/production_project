@@ -1,6 +1,8 @@
 import type { StorybookConfig } from '@storybook/react-vite';
 import path from "path";
 import type {BuildPath} from "../build/types/config";
+import svgr from "vite-plugin-svgr";
+import react from "@vitejs/plugin-react";
 
 const config: StorybookConfig = {
     "stories": [
@@ -30,6 +32,11 @@ const config: StorybookConfig = {
             '@': path.resolve(__dirname, paths.src)
         };
 
+        config.plugins.push([
+            react(),
+            svgr()
+        ]);
+        config.assetsInclude = ['**/*.svg'];
         return config;
     }
 };
