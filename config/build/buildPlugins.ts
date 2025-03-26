@@ -18,14 +18,14 @@ export const buildPlugins = (option: BuildOptions): webpack.WebpackPluginInstanc
         }),
         new webpack.DefinePlugin({
             __IS_DEV__: isDev
-        }),
-        new BundleAnalyzerPlugin({
-            openAnalyzer: false
         })
     ];
 
     if (isDev) {
         plugins.push(new webpack.ProgressPlugin());
+        plugins.push(new BundleAnalyzerPlugin({
+            openAnalyzer: false
+        })); 
     }
 
     return plugins;

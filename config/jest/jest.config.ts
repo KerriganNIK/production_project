@@ -36,7 +36,7 @@ const config: Config = {
     setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
     moduleNameMapper: {
         '\\.(s?css|less)$': 'identity-obj-proxy',
-        "^.+\\.svg$": '<rootDir>/config/jest/jestEmptyComponent.tsx',
+        "^.+\\.svg$": '<rootDir>/config/jest/SvgrMock.tsx',
         "^@/(.*)$": "<rootDir>/src/$1"
     }
 

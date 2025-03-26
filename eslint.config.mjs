@@ -54,7 +54,7 @@ export default [
             "import/default": "error",
             "import/namespace": "error",
             "import/export": "error",
-            'react/ display-name': 'warn'
+            'react/display-name': 'warn'
         }
     }
 ];
