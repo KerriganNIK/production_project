@@ -1,7 +1,7 @@
 import type {Meta, StoryObj} from '@storybook/react';
 import {fn} from '@storybook/test';
 
-import {Button, ThemeButton} from './Button';
+import {Button, SizeButton, ThemeButton} from './Button';
 import {ThemeDecorator} from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import {Theme} from "@/app/providers/ThemProvider";
 
@@ -26,6 +26,20 @@ export const Primary: Story = {
     }
 };
 
+export const Background: Story = {
+    args: {
+        children: 'TEXT',
+        theme: ThemeButton.BACKGROUND
+    }
+};
+
+export const BackgroundInverted: Story = {
+    args: {
+        children: 'TEXT',
+        theme: ThemeButton.BACKGOUND_INVERTED
+    }
+};
+
 export const Clear: Story = {
     args: {
         theme: ThemeButton.CLEAR,
@@ -44,6 +58,25 @@ export const OutlineDark: Story = {
     args: {
         theme: ThemeButton.OUTLINE,
         children: 'TEXT'
+    },
+    decorators: [ThemeDecorator(Theme.DARK)]
+};
+
+export const Square: Story = {
+    args: {
+        theme: ThemeButton.BACKGROUND,
+        children: '>',
+        square: true,
+        size: SizeButton.L
+    }
+};
+
+export const SquareDark: Story = {
+    args: {
+        theme: ThemeButton.BACKGROUND,
+        children: '>',
+        square: true,
+        size: SizeButton.L
     },
     decorators: [ThemeDecorator(Theme.DARK)]
 };

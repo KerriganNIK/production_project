@@ -6,10 +6,6 @@
   position: relative;
 }
 
-.collapsed {
-  width: 90px;
-}
-
 .switcher {
   position: absolute;
   bottom: 20px;
@@ -20,4 +16,50 @@
 
 .lang {
   margin-left: 20px;
+}
+
+.collapsedButton {
+  position: absolute;
+  right: -40px;
+  bottom: 25px;
+}
+
+.items {
+  margin-top: 20px;
+  margin-left: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.textLink {
+  margin-left: 10px;
+  opacity: 1;
+}
+
+.linkSpace {
+  display: flex;
+  margin-top: 10px;
+  color: var(--text-color);
+}
+
+.icon {
+  fill: var(--text-color);
+}
+
+.collapsed {
+  width: 90px;
+
+  .switcher {
+    flex-direction: column;
+  }
+
+  .lang {
+    margin-left: 0;
+  }
+
+  .textLink {
+    opacity: 0;
+    transition: 0.1s opacity;
+    width: 0;
+  }
 }
