@@ -1,4 +1,4 @@
-:root{
+:root {
   //Шрифт
   --font-family-main: impact, fantasy;
 
@@ -16,4 +16,10 @@
   --navbar-height: 50px;
 
   --sidebar-width: 300px;
+
+  //z-index
+  --modal-z-index: 10;
+
+  //Цвета
+  --overlay-color: rgb(0, 0, 0, 0.6);
 }

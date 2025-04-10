@@ -21,7 +21,8 @@ export default [
             "@typescript-eslint": tseslint.plugin,
             "react": pluginReact,
             "react-hooks": pluginReactHooks,
-            "import": pluginImport
+            "import": pluginImport,
+            "i18n": i18n
         },
         rules: {
             "react/react-in-jsx-scope": "off",
