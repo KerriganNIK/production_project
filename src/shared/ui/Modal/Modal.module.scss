@@ -17,12 +17,26 @@
 
 .content {
   background-color: var(--primary-inverted);
+  color: var(--primary);
   padding: 10px;
   border-radius: 10px;
+  transform: scale(0.5);
+  max-width: 60%;
 }
 
 .open {
   pointer-events: auto;
   opacity: 1;
   z-index: var(--modal-z-index);
+
+  .content {
+    transition: 0.3s;
+    transform: scale(1);
+  }
+}
+
+.isClosing {
+  .content {
+    transform: scale(0.4);
+  }
 }
