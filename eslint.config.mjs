@@ -5,7 +5,6 @@ import pluginReact from "eslint-plugin-react";
 import pluginReactHooks from "eslint-plugin-react-hooks";
 import pluginImport from "eslint-plugin-import";
 
-
 /** @type {import('eslint').Linter.Config[]} */
 export default [
     {files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"]},

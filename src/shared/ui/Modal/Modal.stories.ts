@@ -2,25 +2,28 @@ import type {Meta, StoryObj} from '@storybook/react';
 
 import {ThemeDecorator} from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import {Theme} from "@/app/providers/ThemProvider";
-import {Navbar} from "@/widgets/Navbar/ui/Navbar";
+import {Modal} from "@/shared/ui/Modal/Modal";
 
 const meta = {
-    title: 'widgets/Navbar',
-    component: Navbar,
+    title: 'shared/Modal',
+    component: Modal,
     parameters: {
         layout: 'centered'
     },
     tags: ['autodocs'],
     argTypes: {
     },
-    args: {}
-} satisfies Meta<typeof Navbar>;
+    args: {
+        children: "TEST",
+        isOpen: true
+    }
+} satisfies Meta<typeof Modal>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Light: Story = {
-
+    decorators: [ThemeDecorator(Theme.LIGHT)]
 };
 
 export const Dark: Story = {

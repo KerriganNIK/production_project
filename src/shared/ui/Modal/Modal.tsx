@@ -4,10 +4,11 @@ import type {ReactNode, MouseEvent} from "react";
 import { useEffect} from "react";
 import { useState, useCallback, useRef} from "react";
 import {Portal} from "@/shared/ui/Portal/Portal";
+import {useTheme} from "@/app/providers/ThemProvider";
 
 interface ModalProps {
     className?: string;
-                children?: ReactNode;
+    children?: ReactNode;
     isOpen?: boolean;
     onClose?: () => void;
 }
@@ -24,6 +25,7 @@ export const Modal = (props: ModalProps) => {
 
     const [isClosing, setIsClosing] = useState(false);
     const timeRef = useRef<ReturnType<typeof setTimeout>>();
+    const {theme} = useTheme();
 
     const mods: Record<string, boolean> = {
         [classes.open]: isOpen,
@@ -33,10 +35,10 @@ export const Modal = (props: ModalProps) => {
     const closeHandler = useCallback(() => {
         if (onClose) {
             setIsClosing(true);
-            timeRef.current = setTimeout(() => {
-                onClose();
+            timeRef.current = setTimeout(() => {onClose();
                 setIsClosing(false);
-            }, ANIMATION_DELAY);
+            },
+            ANIMATION_DELAY);
         }
     }, [onClose]);
 
@@ -44,15 +46,26 @@ export const Modal = (props: ModalProps) => {
         e.stopPropagation();
     };
 
+    const onKeyDown = useCallback((e: KeyboardEvent) => {
+        if (e.key === "Escape") {
+            closeHandler();
+        }
+    }, [closeHandler]);
+
     useEffect(() => {
+        if (isOpen) {
+            window.addEventListener('keydown', onKeyDown);
+        }
+
         return () => {
             clearTimeout(timeRef.current);
+            window.removeEventListener('keydown', onKeyDown);
         };
-    }, []);
+    }, [isOpen, onKeyDown]);
 
     return (
         <Portal>
-            <div className={classNames(classes.Modal, mods, [className])}>
+            <div className={classNames(classes.Modal, mods, [className, theme])}>
                 <div className={classes.overlay} onClick={closeHandler}>
                     <div className={classes.content} onClick={contentCloseHandler}>
                         {children}
