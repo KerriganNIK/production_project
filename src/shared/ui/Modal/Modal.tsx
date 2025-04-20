@@ -4,7 +4,6 @@ import type {ReactNode, MouseEvent} from "react";
 import { useEffect} from "react";
 import { useState, useCallback, useRef} from "react";
 import {Portal} from "@/shared/ui/Portal/Portal";
-import {useTheme} from "@/app/providers/ThemProvider";
 
 interface ModalProps {
     className?: string;
@@ -25,7 +24,6 @@ export const Modal = (props: ModalProps) => {
 
     const [isClosing, setIsClosing] = useState(false);
     const timeRef = useRef<ReturnType<typeof setTimeout>>();
-    const {theme} = useTheme();
 
     const mods: Record<string, boolean> = {
         [classes.open]: isOpen,
@@ -65,7 +63,7 @@ export const Modal = (props: ModalProps) => {
 
     return (
         <Portal>
-            <div className={classNames(classes.Modal, mods, [className, theme])}>
+            <div className={classNames(classes.Modal, mods, [className])}>
                 <div className={classes.overlay} onClick={closeHandler}>
                     <div className={classes.content} onClick={contentCloseHandler}>
                         {children}
