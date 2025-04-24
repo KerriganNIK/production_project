@@ -1,8 +1,8 @@
 import classNames from "classnames";
 import classes from "./AppLink.module.scss";
-import type { LinkProps} from "react-router-dom";
-import {Link} from "react-router-dom";
-import type {FC} from "react";
+import type { LinkProps } from "react-router-dom";
+import { Link } from "react-router-dom";
+import type { FC } from "react";
 
 export enum AppLinkTheme {
     PRIMARY = 'primary',
@@ -14,7 +14,7 @@ interface AppLinkProps extends LinkProps {
 }
 
 export const AppLink: FC<AppLinkProps> = (props) => {
-    const {className, children, to, theme, ...rest} = props;
+    const { className, children, to, theme, ...rest } = props;
 
     return (
         <Link

@@ -1,6 +1,6 @@
 import type { StorybookConfig } from '@storybook/react-vite';
 import path from "path";
-import type {BuildPath} from "../build/types/config";
+import type { BuildPath } from "../build/types/config";
 import svgr from "vite-plugin-svgr";
 import react from "@vitejs/plugin-react";
 

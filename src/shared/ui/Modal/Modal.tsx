@@ -1,9 +1,9 @@
 import classNames from "classnames";
 import classes from "./Modal.module.scss";
-import type {ReactNode, MouseEvent} from "react";
-import { useEffect} from "react";
-import { useState, useCallback, useRef} from "react";
-import {Portal} from "@/shared/ui/Portal/Portal";
+import type { ReactNode, MouseEvent } from "react";
+import { useEffect } from "react";
+import { useState, useCallback, useRef } from "react";
+import { Portal } from "@/shared/ui/Portal/Portal";
 
 interface ModalProps {
     className?: string;

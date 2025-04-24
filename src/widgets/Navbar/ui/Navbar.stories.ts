@@ -1,8 +1,8 @@
-import type {Meta, StoryObj} from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
-import {ThemeDecorator} from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
-import {Theme} from "@/app/providers/ThemProvider";
-import {Navbar} from "@/widgets/Navbar/ui/Navbar";
+import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
+import { Theme } from "@/app/providers/ThemProvider";
+import { Navbar } from "@/widgets/Navbar/ui/Navbar";
 
 const meta = {
     title: 'widgets/Navbar',

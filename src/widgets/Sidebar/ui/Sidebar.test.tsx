@@ -1,7 +1,7 @@
-import {screen, fireEvent} from "@testing-library/react";
-import {Sidebar} from "@/widgets/Sidebar/ui/Sidebar";
-import {renderWithTranslation} from "@/shared/lib/tests/renderWithTranslation/renderWithTranslation";
-import {MemoryRouter as Router} from "react-router-dom";
+import { screen, fireEvent } from "@testing-library/react";
+import { Sidebar } from "@/widgets/Sidebar/ui/Sidebar";
+import { renderWithTranslation } from "@/shared/lib/tests/renderWithTranslation/renderWithTranslation";
+import { MemoryRouter as Router } from "react-router-dom";
 
 describe('Sidebar', () => {
     test('Sidebar render', () => {

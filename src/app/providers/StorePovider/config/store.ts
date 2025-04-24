@@ -1,6 +1,6 @@
-import {configureStore} from "@reduxjs/toolkit";
-import type {StateSchema} from "@/app/providers/StorePovider/config/StateSchema";
-
+import { configureStore } from "@reduxjs/toolkit";
+import type { StateSchema } from "@/app/providers/StorePovider/config/StateSchema";
+    
 export const createReduxStore = (initialState?: StateSchema) => {
     return configureStore<StateSchema>({
         reducer: {
