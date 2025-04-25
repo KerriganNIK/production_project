@@ -1,3 +1,5 @@
-// eslint-disable-next-line @typescript-eslint/no-empty-object-type
+import type { UserSchema } from "@/enitites/User";
+
 export interface StateSchema {
+    user: UserSchema;
 }

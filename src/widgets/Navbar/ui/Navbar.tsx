@@ -3,7 +3,7 @@ import classes from "./Navbar.module.scss";
 import { Button, ThemeButton } from "@/shared/ui/Button/Button";
 import { useTranslation } from "react-i18next";
 import { useCallback, useState } from "react";
-import { Modal } from "@/shared/ui/Modal/Modal";
+import { LoginModal } from "@/features/AuthByUserName";
 
 interface NavbarProps {
     className?: string;
@@ -22,15 +22,14 @@ export const Navbar = ({ className }: NavbarProps) => {
             <Button
                 theme={ThemeButton.CLEAR}
                 onClick={toggleModalOpen}
+                className={classes.linkSpace}
             >
                 {t('Войти')}
             </Button>
-            <Modal
+            <LoginModal
                 isOpen={openModal}
                 onClose={toggleModalOpen}
-            >
-                TEST
-            </Modal>
+            />
         </div>
     );
 };
