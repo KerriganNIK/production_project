@@ -6,5 +6,8 @@
   "Произошла ошибка, обновите страницу!": "An error has occurred, refresh the page!",
   "Обновить": "Reload",
   "Короткий язык": "EN",
-  "Войти": "Войти"
+  "Войти": "Enter",
+  "Введён неверный логин или пароль": "You entered an incorrect username or password",
+  "Форма авторизации": "Authorization form",
+  "Выйти": "Exit"
 }

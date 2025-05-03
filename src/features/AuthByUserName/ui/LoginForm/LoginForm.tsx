@@ -7,15 +7,19 @@ import { getLoginState } from "../../model/selectors/getLoginState/getLoginState
 import { useCallback } from "react";
 import { loginActions } from "@/features/AuthByUserName";
 import { usePostLoginMutation } from "../../model/services/loginByUserName/loginByUserName";
+import { Text, ThemeText } from "@/shared/ui/Text/Text";
+import { useTranslation } from "react-i18next";
+import { userActions } from "@/enitites/User";
 
 interface LoginFormProps {
     className?: string;
 }
 
 export const LoginForm = ({ className }: LoginFormProps) => {
+    const { t } = useTranslation();
     const dispatch = useDispatch();
     const { username, password } = useSelector(getLoginState);
-    const [postLogin, { isLoading }] = usePostLoginMutation();
+    const [postLogin, { isLoading, error }] = usePostLoginMutation();
 
     const onChangeUsername = useCallback((value: string) => {
         dispatch(loginActions.setUsername(value));
@@ -25,7 +29,7 @@ export const LoginForm = ({ className }: LoginFormProps) => {
         dispatch(loginActions.setPassword(value));
     }, [dispatch]);
 
-    const authByUsename = async () => {
+    const authByUsername = async () => {
         try {
             const user = {
                 username: username,
@@ -33,7 +37,8 @@ export const LoginForm = ({ className }: LoginFormProps) => {
             };
 
             const response = await postLogin(user).unwrap();
-            console.log(response);
+            dispatch(userActions.setUserAuthData(response));
+            localStorage.setItem("user", JSON.stringify(response));
         } catch (err) {
             console.error(err.message);
         }
@@ -41,6 +46,9 @@ export const LoginForm = ({ className }: LoginFormProps) => {
 
     return (
         <div className={classNames(classes.LoginForm, {}, [className])}>
+            <Text title={t('Форма авторизации')}/>
+            {error && <Text theme={ThemeText.ERROR} text={t('Введён неверный логин или пароль')} />}
+
             <Input
                 className={classes.input}
                 placeholder={`username`}
@@ -60,7 +68,7 @@ export const LoginForm = ({ className }: LoginFormProps) => {
                 className={classes.loginBtn}
                 theme={ThemeButton.BACKGROUND}
                 disabled={isLoading}
-                onClick={authByUsename}
+                onClick={authByUsername}
             >
                 Войти
             </Button>
