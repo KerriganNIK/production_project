@@ -1,7 +1,7 @@
 import type { UserSchema } from "@/enitites/User";
 import type { LoginSchema } from "@/features/AuthByUserName";
 import type { loginApi } from "@/features/AuthByUserName";
-import type { AnyAction, EnhancedStore, Reducer, ReducersMapObject } from "@reduxjs/toolkit";
+import type { AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject } from "@reduxjs/toolkit";
 
 export interface StateSchema {
     user: UserSchema;

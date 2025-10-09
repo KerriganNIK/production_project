@@ -1,7 +1,8 @@
 import { createReduxStore } from "./config/store";
-import type { StateSchema } from "./config/StateSchema";
+import { ReduxStoreWithManager, StateSchema } from "./config/StateSchema";
 
 export {
     createReduxStore,
+    ReduxStoreWithManager,
     StateSchema
 };
